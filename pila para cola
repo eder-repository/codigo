@@ -1,0 +1,46 @@
+//INGRESAR
+
+        Nodo nuevoNodo=new Nodo(TXTinsertar.getText());
+       
+        if(Cola==null)
+        {
+            Cola=nuevoNodo;
+        }
+        else{
+            nuevoNodo.siguiente=Cola;
+            Cola=nuevoNodo;
+        } 
+        
+        TXTinsertar.setText("");
+        
+    } 
+    // IMPRIMIR
+    
+    Nodo temporal=Cola;
+        Nodo anterior=new Nodo();
+        
+        if (Nodo.ColaVacia(temporal))
+        {
+           JOptionPane.showMessageDialog(null, "COLA NO ENCONTRO DATOS");
+             
+        }        
+        else
+          {
+        if (Cola.siguiente==null)
+                 
+              {       
+                 
+           TXTimprimir.setText(TXTimprimir.getText()+Cola.dato.toString()+"-");
+            Cola=null;
+             }        
+        else
+            {
+            while(temporal.siguiente!=null)
+            {
+                anterior=temporal;
+                temporal=temporal.siguiente;
+            }
+            TXTimprimir.setText(TXTimprimir.getText()+temporal.dato.toString()+"-");
+            anterior.siguiente=null;
+       }
+           
